@@ -49,14 +49,6 @@ def pytest_bdd_before_scenario(request, feature, scenario):
 
 def pytest_bdd_after_scenario(request, feature, scenario):
     """Called after scenario is executed."""
-    if feature.name == '003 Adicionar itens' or \
-            feature.name == '004 Alterar meio de pagamento':
-        pytest.globalDict['keep_recommendation_list'] = True
-    elif feature.name == '002 Fechar pedido':
-        if not scenario.name.__contains__('CN01'):
-            pytest.globalDict['keep_recommendation_list'] = True
-    else:
-        pytest.globalDict['keep_recommendation_list'] = False
     add_scenario_to_run(request, scenario)
 
 
