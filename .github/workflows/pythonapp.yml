@@ -26,7 +26,6 @@ jobs:
         pip install -r requirements.txt
     - name: Test with pytest
       run: |
-        pip install pytest
         ls
         rm -rf src/pytest-bdd/tests
-        pytest -k "automated" --tb=short
+        python -m pytest -k "automated"
