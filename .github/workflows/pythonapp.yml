@@ -27,4 +27,6 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pytest
+        sh 'ls'
+        sh 'rm -rf src/pytest-bdd/tests'
+        pytest -k "automated" --tb=short
