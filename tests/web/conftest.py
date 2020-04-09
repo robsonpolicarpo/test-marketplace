@@ -34,7 +34,8 @@ def pytest_runtest_call(item):
 
 
 def pytest_configure(config):
-    shutil.rmtree(Path('./reports/').absolute())
+    if Path('./reports').exists():
+        shutil.rmtree(Path('./reports/').absolute())
     Path('./reports/allure').mkdir(parents=True, exist_ok=True)
     Path('./reports/json').mkdir(parents=True, exist_ok=True)
     pytest.globalDict = defaultdict()
