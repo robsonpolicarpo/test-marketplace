@@ -27,8 +27,8 @@ jobs:
           ls
           rm -rf src/pytest-bdd/tests
       - name: Test API
-          run: |
-            python -m pytest tests/service/test_service.py --tb=short
+        run: |
+          python -m pytest tests/service/test_service.py --tb=short
       - name: Test BDD
         run: |
           chromedriver -v
