@@ -31,5 +31,6 @@ jobs:
           python -m pytest tests/service/test_service.py --tb=short
       - name: Test BDD
         run: |
+          google-chrome --version
           chromedriver -v
           python -m pytest -k "automated" --tb=short
