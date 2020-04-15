@@ -34,3 +34,6 @@ jobs:
           google-chrome --version
           chromedriver -v
           python -m pytest -k "automated" --tb=short
+      - name: Test Cases
+        run: |
+          python -m pytest tests/web/test_check_product_in_cart.py
