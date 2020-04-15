@@ -8,6 +8,6 @@ unzip ~/chromedriver_linux64.zip -d ~/
 echo 'Cleaning...'
 rm ~/chromedriver_linux64.zip
 echo 'Setuping...'
-sudo mv -f ~/chromedriver $(pwd)/venv/bin
+mv -f ~/chromedriver $(pwd)/venv/bin
 #sudo chown root:root /usr/local/bin/chromedriver
 #sudo chmod 0755 /usr/local/bin/chromedriver
