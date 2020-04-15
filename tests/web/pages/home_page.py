@@ -14,10 +14,10 @@ class HomePage(GenericPage):
         super().__init__(driver)
         self._input_search = s("#inpHeaderSearch")
         self._container_search = s("//div[contains(@class, 'search-results-container')]")
-        self.txt_qty_products_found = s("#main-title").s("./descendant::small")
+        self.txt_qty_products_found = s("//div[@class='header-search']").s("./descendant::small")
         self._txt_products_not_found = s("//div[@class='nm-not-found-message1']")
-        self.first_prod = s("//li[contains(@id, 'nm-product')]")
-        self._products = ss("//li[contains(@id, 'nm-product')]")
+        self.first_prod = s("//li[@class='product']")
+        self._products = ss("//li[@class='product']")
 
     def search(self, term):
         self._input_search.type(term).type(Keys.ENTER)
