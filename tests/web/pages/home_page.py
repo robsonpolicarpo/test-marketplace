@@ -15,7 +15,7 @@ class HomePage(GenericPage):
         self._input_search = s("#inpHeaderSearch")
         self._container_search = s("//div[contains(@class, 'search-results-container')]")
         self.txt_qty_products_found = s("//div[@class='header-search']").s("./descendant::small")
-        self._txt_products_not_found = s("//div[@class='nm-not-found-message1']")
+        self._txt_products_not_found = s("//div[@class='header-not-found']")
         self.first_prod = s("//li[@class='product']")
         self._products = ss("//li[@class='product']")
 
@@ -33,7 +33,7 @@ class HomePage(GenericPage):
 
     def detail_product(self, item=0):
         self.wait_products_presented()
-        prod_title = self._products[item].s("./descendant::*[@class='nm-product-name']").text
+        prod_title = self._products[item].s("./descendant::*[@class='productTitle']").text
         self._products[item].click()
         return prod_title
 
